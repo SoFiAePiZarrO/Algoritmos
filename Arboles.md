@@ -32,6 +32,49 @@ Receta:
 - Determinar el factor de balance del nodo.
 - Si el valor es mayor que $1$ o menor que $-1$, aplicar la rotación correcta: LL, LR, RR o RL.
 
+#### Rotaciones
+
+En un AVL, cuando un nodo queda desbalanceado después de insertar o eliminar, se corrige con rotaciones. El desbalance se detecta con el factor de balance:
+
+- factor de balance = altura(izq) - altura(der)
+- si es mayor que 1 o menor que -1, hay que reequilibrar.
+
+##### Rotaciones simples
+
+1. Rotación simple a la derecha (LL)
+   - Se aplica cuando el subárbol izquierdo del hijo izquierdo del nodo está más alto.
+   - El hijo izquierdo sube y reemplaza al nodo padre.
+
+
+2. Rotación simple a la izquierda (RR)
+   - Se aplica cuando el subárbol derecho del hijo derecho del nodo está más alto.
+   - El hijo derecho sube y reemplaza al nodo padre.
+
+
+##### Rotaciones dobles
+
+3. Rotación doble izquierda-derecha (LR)
+   - Se aplica cuando el hijo izquierdo del nodo tiene un subárbol derecho más alto.
+   - Primero se rota a la izquierda el hijo izquierdo, y luego a la derecha el nodo padre.
+
+4. Rotación doble derecha-izquierda (RL)
+   - Se aplica cuando el hijo derecho del nodo tiene un subárbol izquierdo más alto.
+   - Primero se rota a la derecha el hijo derecho, y luego a la izquierda el nodo padre.
+
+##### Forma de recordarlas
+
+- LL → rotación simple a la derecha
+- RR → rotación simple a la izquierda
+- LR → rotación doble izquierda-derecha
+- RL → rotación doble derecha-izquierda
+
+En términos visuales, también se suelen llamar:
+
+- zig-zig: caso LL o RR
+- zig-zag: caso LR o RL
+
+La idea general es siempre la misma: subir el nodo que está “demasiado profundo” y reencadenar los subárboles completos sin perder ninguna rama.
+
 ### 3) Árboles 2-3
 
 Patrón de solución:
